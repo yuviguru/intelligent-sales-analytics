@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Configure secrets scanning
+# These are client-side API keys that need to be bundled for browser use
+# They're protected by CORS and rate limiting on the API provider side
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "VITE_GROQ_API_KEY,VITE_GEMINI_API_KEY,VITE_OLLAMA_URL,VITE_OLLAMA_MODEL,VITE_GROQ_MODEL,VITE_GEMINI_MODEL"
