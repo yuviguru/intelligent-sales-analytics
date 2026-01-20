@@ -15,7 +15,6 @@ class AIService {
   private provider: AIProviderInterface
   private providerType: AIProvider
   private currentModel?: string
-  private providerOverride?: ProviderOverride
 
   constructor() {
     this.providerType = aiConfig.provider
@@ -57,15 +56,12 @@ class AIService {
       this.currentModel = newModel
       this.provider = this.createProvider(newProvider, newModel)
     }
-
-    this.providerOverride = override
   }
 
   /**
    * Clear provider override
    */
   clearProviderOverride() {
-    this.providerOverride = undefined
     this.providerType = aiConfig.provider
     this.currentModel = aiConfig.model
     this.provider = this.createProvider(aiConfig.provider, aiConfig.model)

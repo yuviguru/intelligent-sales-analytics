@@ -42,7 +42,6 @@ export function AIInsightsPanel() {
     remainingUses,
     isLimitReached,
     blockedMessage,
-    providerName,
     sendMessage,
     clearError,
   } = useAI({

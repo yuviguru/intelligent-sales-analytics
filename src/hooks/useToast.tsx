@@ -15,7 +15,6 @@ const MAX_TOASTS = 3
 
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([])
-  const [queue, setQueue] = useState<Toast[]>([])
 
   const addToast = useCallback((toast: Omit<Toast, 'id'>) => {
     const newToast: Toast = {
@@ -36,8 +35,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 
     setToasts(current => {
       if (current.length >= MAX_TOASTS) {
-        // Add to queue
-        setQueue(q => [...q, newToast])
+        // Skip if too many toasts
         return current
       }
       return [...current, newToast]
@@ -46,16 +44,6 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 
   const dismissToast = useCallback((id: string) => {
     setToasts(current => current.filter(t => t.id !== id))
-
-    // Show next from queue
-    setQueue(q => {
-      if (q.length > 0) {
-        const [next, ...rest] = q
-        setToasts(current => [...current, next])
-        return rest
-      }
-      return q
-    })
   }, [])
 
   return (

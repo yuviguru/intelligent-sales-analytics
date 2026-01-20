@@ -1,10 +1,5 @@
 type EventType = 'new-order' | 'ai-insight' | 'milestone' | 'warning' | 'cap-reached'
 
-interface RealtimeEvent {
-  type: EventType
-  data: any
-}
-
 interface NewOrderEvent {
   orderId: string
   amount: string

@@ -13,7 +13,7 @@ import { AppMotionConfig } from './components/MotionConfig'
 import { SettingsProvider } from './contexts/SettingsContext'
 import { ToastProvider, useToast } from './hooks/useToast.tsx'
 import { useSettings } from './hooks/useSettings'
-import { keyMetrics, SalesMetric, recentOrders as initialOrders, RecentOrder, updateLiveMetrics, updateLiveRecentOrders, addEventToHistory, addOrderToHistory } from './data/sales-data'
+import { keyMetrics, recentOrders as initialOrders, RecentOrder, updateLiveMetrics, updateLiveRecentOrders, addEventToHistory, addOrderToHistory } from './data/sales-data'
 import { createStaggerContainer } from './utils/animations'
 import { realtimeService } from './services/realtimeService'
 import { soundService } from './services/soundService'
@@ -178,7 +178,6 @@ function DashboardContent() {
 
   const spacing = appliedSettings.dashboard.compactMode ? 'gap-3 mb-3' : 'gap-4 mb-6'
   const largeSpacing = appliedSettings.dashboard.compactMode ? 'gap-3 mb-3' : 'gap-6 mb-6'
-  const cardPadding = appliedSettings.dashboard.compactMode ? 'p-4' : 'p-6'
 
   return (
     <div className="min-h-screen bg-surface-950 noise-overlay">

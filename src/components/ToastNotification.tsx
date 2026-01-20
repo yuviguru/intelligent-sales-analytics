@@ -76,11 +76,11 @@ export function ToastNotification({ toast, index, onDismiss }: ToastNotification
       scale: 1,
       y: index * 110,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 25,
         stiffness: 300,
         y: {
-          type: "spring",
+          type: "spring" as const,
           damping: 20,
           stiffness: 200
         }
@@ -92,7 +92,7 @@ export function ToastNotification({ toast, index, onDismiss }: ToastNotification
       scale: 0.8,
       transition: {
         duration: 0.15,
-        ease: "easeIn"
+        ease: "easeIn" as const
       }
     }
   }

@@ -1,4 +1,4 @@
-import { Cloud, Server, Cpu, Sparkles } from 'lucide-react'
+import { Server, Cpu, Sparkles } from 'lucide-react'
 import { clsx } from 'clsx'
 import { useSettings } from '../../hooks/useSettings'
 import { AIProvider, ContextLevel, ResponseLength } from '../../types/settings'

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react'
+import { useRef, useMemo } from 'react'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,7 +12,7 @@ import {
   Filler,
 } from 'chart.js'
 import { Line, Bar } from 'react-chartjs-2'
-import { revenueData, weeklyRevenueData, formatCurrency, RevenueDataPoint } from '../data/sales-data'
+import { revenueData, weeklyRevenueData, formatCurrency } from '../data/sales-data'
 
 ChartJS.register(
   CategoryScale,
@@ -94,8 +94,8 @@ export function RevenueChart({ view = 'monthly', liveRevenue = null }: RevenueCh
         padding: 12,
         displayColors: false,
         callbacks: {
-          label: (context: { parsed: { y: number } }) => {
-            return `Revenue: ${formatCurrency(context.parsed.y)}`
+          label: (context: { parsed: { y: number | null } }) => {
+            return `Revenue: ${formatCurrency(context.parsed.y ?? 0)}`
           },
         },
       },

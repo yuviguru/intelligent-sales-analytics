@@ -9,7 +9,6 @@ export function MarkdownMessage({ content, isUser = false }: MarkdownMessageProp
   // Parse inline formatting (bold, italic, etc.)
   const parseInlineFormatting = (text: string): (string | JSX.Element)[] => {
     const parts: (string | JSX.Element)[] = []
-    let remaining = text
     let key = 0
 
     // Parse bold text (**text**)

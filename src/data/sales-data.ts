@@ -253,9 +253,6 @@ export function getDataSummary(): string {
   const revenueChange = calculateChange(keyMetrics[0].value, keyMetrics[0].previousValue)
   const ordersChange = calculateChange(keyMetrics[1].value, keyMetrics[1].previousValue)
 
-  const topProduct = topProducts[0]
-  const topRegion = regionData[0]
-
   // Use live recent orders if available, and sort them properly
   const orders = (liveRecentOrders || recentOrders).slice().sort((a, b) => {
     // First sort by date (newest first)
