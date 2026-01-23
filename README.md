@@ -2,7 +2,27 @@
 
 A modern sales dashboard with integrated AI insights, built as a portfolio project demonstrating frontend architecture and AI integration skills.
 
-![Dashboard Preview](./preview.png)
+## 🎯 Live Demo
+
+**[View Live Demo](https://dashboard.yuvaraj-guru.com)** 🚀
+
+## 📸 Screenshots
+
+### Main Dashboard
+![Dashboard Overview](./preview-main-dashboard.png)
+*Real-time metrics, revenue trends, order analytics, and top-selling products*
+
+### Recent Orders
+![Recent Orders](./preview-recent-orders.png)
+*Order tracking with customer details, products, amounts, and status*
+
+### AI-Powered Insights
+![AI Insights](./preview-ai-insights.png)
+*Groq-powered sales analysis and interactive data queries*
+
+### Live Notifications
+![Order Notification](./preview-notification.png)
+*Real-time order updates*
 
 ## Features
 
